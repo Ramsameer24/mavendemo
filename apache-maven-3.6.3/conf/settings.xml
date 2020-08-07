@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <servers>
+    <server>
+      <username>e3025287</username>
+      <password>AKCp5e2g4t3PS2h2J6Be6TqAm2rFyY4kWSYJ4sMhuZsK1W9UQLJUW17pKDqekRnYL1G7dRNEV</password>
+      <id>central</id>
+    </server>
+     <server>
+      <username>e3025287</username>
+      <password>AKCp5e2g4t3PS2h2J6Be6TqAm2rFyY4kWSYJ4sMhuZsK1W9UQLJUW17pKDqekRnYL1G7dRNEV</password>
+      <id>snapshots</id>
+    </server>
+     <server>
+      <username>e3025287</username>
+      <password>AKCp5e2g4t3PS2h2J6Be6TqAm2rFyY4kWSYJ4sMhuZsK1W9UQLJUW17pKDqekRnYL1G7dRNEV</password>
+      <id>releases</id>
+    </server>
+  </servers>
+ 
+  <mirrors>
+    <mirror>
+      <mirrorOf>*</mirrorOf>
+      <name>central</name>
+      <url>https://artifactory.fis.dev/artifactory/cmops-maven-dev</url>
+      <id>central</id>
+    </mirror>
+  </mirrors>
+  <localRepository>/home/root/.m2/repository</localRepository>
+  <profiles>
+    <profile>   
+        <repositories>
+            <repository>
+              <id>Artifactory</id>
+              <name>Artifactory Public Mirror</name>
+              <url>https://artifactory.fis.dev/artifactory/cmops-maven-dev</url>
+              <layout>default</layout>
+              <releases>
+                  <enabled>true</enabled>
+                  <updatePolicy>always</updatePolicy>
+              </releases>
+              <snapshots>
+                  <enabled>true</enabled>
+                  <updatePolicy>always</updatePolicy>
+              </snapshots>
+          </repository>             
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>plugins-release</name>
+          <url>https://artifactory.fis.dev/artifactory/cmops-maven-dev</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>plugins-snapshot</name>
+          <url>https://artifactory.fis.dev/artifactory/cmops-maven-dev</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>artifactory</id>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+  </activeProfiles>
+</settings>
